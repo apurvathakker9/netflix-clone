@@ -1,23 +1,31 @@
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
 
   module: {
     rules: [
       //babel loader -> JSX into JS
-
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         resolve: {
-          extensions: [".js", ".jsx"],
+          extensions: [".js", ".jsx",".ts", ".tsx"],
         },
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
+            presets: ["@babel/preset-typescript","@babel/preset-env", "@babel/preset-react"],
           },
         },
       },
+      // TS Loader
+      // {
+      //   test:/\.(ts|tsx)$/,
+      //   exclude: /node_modules/,
+      //   resolve: {
+      //     extensions: [".ts", ".tsx"],
+      //   },
+      //   use: 'ts-loader',
+      // },
       //CSS style loader
       {
         test: /\.css/,
