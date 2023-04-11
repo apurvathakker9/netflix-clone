@@ -5,6 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <title>Netflix Clone</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>
         <Main />
